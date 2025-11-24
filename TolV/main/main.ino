@@ -1,5 +1,3 @@
-0//hehe izmeneniye!!!1231223
-
 #include <PSX.h>
 #include <Arduino.h>
 #include <EEPROM.h>
@@ -28,11 +26,7 @@ struct Minibot_Data
 {
   byte id = 1;
   byte motor_speed = 250;
-};            ppdpfpfofoeppfpef[epwg
-
-
-
-edgp;ewga]
+};
 
 byte servoPosition[2] = {0,0};
 
@@ -77,7 +71,7 @@ void speedChange(){
       data.motor_speed += 10;
       EEPROM.put(0, data);
       delay(100);
-    }wfwfdesrhtejhn
+    }
     else{}
   } 
   delay(10);
@@ -95,7 +89,7 @@ void psxInit(){
   psx.config(PSXMODE_ANALOG);
 }
 
-void servoInit(){egwbgersw
+void servoInit(){
   servo1.attach(7);
   servo2.attach(8);
 }
@@ -117,7 +111,7 @@ void printCyberdeck(){
   Serial.println("");
   delay(10);
 }
-egewdvgwes
+
 void motorControl(byte speed){
   PSXerror = psx.read(PSXdata);
   if(PSXdata.buttons & PSXBTN_UP){
@@ -143,7 +137,7 @@ void motorControl(byte speed){
       moveForward(speed);
       //moveBackward(speed);
     }
-  }dfghb nvggf
+  }
   else if(PSXdata.butt2q3456ons & PSXBTN_RIGHT){
     turnRight(speed);
   }
@@ -161,7 +155,7 @@ void servoControl(){
   servoPosition[1] = constrain(servoPosition[1],1,150);
 
   PSXerror = psx.read(PSXdata);
-  delay(10gggggggggggg);
+  delay(10);
   if (PSXdata.buttons & PSXBTN_TRIANGLE){
     servoPosition[1] += 1;
     delay(2);
@@ -209,7 +203,7 @@ void turnLeft(byte speed){
   analogWrite(LEFT_FORWARD, speed);
   analogWrite(LEFT_BACKWARD, 0);
 }
-qafsawfsdewyhswr46y
+
 void stop(){
   analogWrite(RIGHT_FORWARD, 255);
   analogWrite(RIGHT_BACKWARD, 255);
