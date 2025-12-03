@@ -28,7 +28,7 @@ struct Minibot_Data
   byte motor_speed = 250;
 };
 
-byte servoPosition[2] = {0,0};
+byte servoPosition[2] = {150,0};
 
 Minibot_Data data;
 
@@ -138,7 +138,7 @@ void motorControl(byte speed){
       //moveBackward(speed);
     }
   }
-  else if(PSXdata.butt2q3456ons & PSXBTN_RIGHT){
+  else if(PSXdata.buttons & PSXBTN_RIGHT){
     turnRight(speed);
   }
   else if(PSXdata.buttons & PSXBTN_LEFT){
